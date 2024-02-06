@@ -12,7 +12,7 @@ public class Task06{
         System.out.println(getDayName(day));
     }
 
-    // Get the name for the Week
+
     public static String getDayName(int day) {
         String dayName = "";
         switch (day) {
