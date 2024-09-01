@@ -45,7 +45,7 @@ public class FirstTestCase {
             submitButton.click();
 
         } finally {
-            // Close the browser
+           
             driver.quit();
         }
     }
