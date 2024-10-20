@@ -30,7 +30,7 @@ public class TestCase1 {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Desktop\\Downloads\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // Updated for Selenium 4
-        js = (JavascriptExecutor) driver;
+      
     }
 
 
