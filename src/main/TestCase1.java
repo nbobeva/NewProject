@@ -39,18 +39,18 @@ public class TestCase1 {
         driver.get("https://demoqa.com/text-box");
 
         // Fill in the form
-        driver.findElement(By.id("userName")).sendKeys("John Doe");
+        driver.findElement(By.id("userName")).sendKeys("John");
         driver.findElement(By.id("userEmail")).sendKeys("john.doe@example.com");
-        driver.findElement(By.id("currentAddress")).sendKeys("123 Main St, Springfield");
+        driver.findElement(By.id("currentAddress")).sendKeys("123 Main Str");
 
         // Scroll and click the "Submit" button
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submit")));
         js.executeScript("arguments[0].scrollIntoView(true);", submitButton);
         submitButton.click();
 
-        // Validation - Check if form submission output contains "John Doe"
+        // Validation - Check if form submission output contains "John"
         WebElement outputName = driver.findElement(By.id("name"));
-        assertTrue(outputName.getText().contains("John Doe"));
+        assertTrue(outputName.getText().contains("John"));
     }
 
     @After
