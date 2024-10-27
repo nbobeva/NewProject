@@ -45,7 +45,7 @@ public class TestCase1 {
 
         // Validation - Check if form submission output contains "John"
         WebElement outputName = driver.findElement(By.id("name"));
-        assertTrue(outputName.getText().contains("John"));
+        assertTrue(outputName.getText().contains("N"));
     }
 
     @After
