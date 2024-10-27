@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,7 +19,6 @@ public class TestCase1 {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private JavascriptExecutor js;
 
     @Before
     public void setUp() {
@@ -30,22 +28,19 @@ public class TestCase1 {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Desktop\\Downloads\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // Updated for Selenium 4
-      
     }
-
 
     @Test
     public void testFillTextBox() {
         driver.get("https://demoqa.com/text-box");
 
         // Fill in the form
-        driver.findElement(By.id("userName")).sendKeys("John");
-        driver.findElement(By.id("userEmail")).sendKeys("john.doe@example.com");
-        driver.findElement(By.id("currentAddress")).sendKeys("123 Main Str");
+        driver.findElement(By.id("userName")).sendKeys("N");
+        driver.findElement(By.id("userEmail")).sendKeys("n@example.com");
+        driver.findElement(By.id("currentAddress")).sendKeys("1 Str");
 
-        // Scroll and click the "Submit" button
+        // Click the "Submit" button directly
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submit")));
-        js.executeScript("arguments[0].scrollIntoView(true);", submitButton);
         submitButton.click();
 
         // Validation - Check if form submission output contains "John"
@@ -59,5 +54,6 @@ public class TestCase1 {
             driver.quit();
         }
     }
+}
 }
 
